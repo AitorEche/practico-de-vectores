@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<string> alumno = {"Ana","Luis","Mario","Juan"};
+    vector<double> nota = {60,95,88,99};
+
+    for(int i=0; i<nota.size(); i++){
+        for(int j=0; j<nota.size()-1; j++){
+            if(nota[j] < nota[j+1]){
+                swap(nota[j], nota[j+1]);
+                swap(alumno[j], alumno[j+1]);
+            }
+        }
+    }
+
+    cout << "Top 3:\n";
+    for(int i=0; i<3; i++)
+        cout << alumno[i] << ": " << nota[i] << endl;
+}
