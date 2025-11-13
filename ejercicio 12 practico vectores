@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> A = {1,2,2,3,1,4};
+    vector<int> B;
+
+    for(int x : A){
+        bool existe = false;
+        for(int y : B){
+            if(x == y) existe = true;
+        }
+        if(!existe) B.push_back(x);
+    }
+
+    for(int x : B) cout << x << " ";
+}
