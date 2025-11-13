@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<string> alumno;
+    vector<double> nota;
+    int op;
+
+    do{
+        cout << "\n1) Ingresar alumno\n2) Listar\n3) Ordenar alfabeticamente\n4) Mejor nota\n5) Promedio\n0) Salir\n";
+        cin >> op;
+
+        if(op==1){
+            string a; double n;
+            cout << "Nombre: "; cin >> a;
+            cout << "Nota: "; cin >> n;
+            alumno.push_back(a);
+            nota.push_back(n);
+        }
+        else if(op==2){
+            for(int i=0; i<alumno.size(); i++)
+                cout << alumno[i] << " - " << nota[i] << endl;
+        }
+        else if(op==3){
+            for(int i=0;i<alumno.size();i++){
+                for(int j=0;j<alumno.size()-1;j++){
+                    if(alumno[j] > alumno[j+1]){
+                        swap(alumno[j], alumno[j+1]);
+                        swap(nota[j], nota[j+1]);
+                    }
+                }
+            }
+        }
+        else if(op==4){
+            double max = nota[0];
+            string nom = alumno[0];
+            for(int i=1;i<nota.size();i++)
+                if(nota[i] > max){
+                    max = nota[i];
+                    nom = alumno[i];
+                }
+            cout << "Mejor: " << nom << " (" << max << ")";
+        }
+        else if(op==5){
+            double s=0;
+            for(double x : nota) s+=x;
+            cout << "Promedio: " << s/nota.size();
+        }
+
+    }while(op!=0);
+}
