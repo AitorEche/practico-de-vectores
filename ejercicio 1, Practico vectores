@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<double> v = {4, 8, -3, 10, 2};
+    double maxi = v[0];
+
+    for(double x : v){
+        if(x > maxi) maxi = x;
+    }
+
+    cout << "Maximo = " << maxi;
+}
