@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> A = {1,2,3};
+    vector<int> B = {4,5};
+    vector<int> C;
+
+    C.insert(C.end(), A.begin(), A.end());
+    C.insert(C.end(), B.begin(), B.end());
+
+    for(int x : C) cout << x << " ";
+}
