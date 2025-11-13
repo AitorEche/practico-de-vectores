@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<int> a = {1,2,3,2,1};
+    bool capicua = true;
+
+    for(int i=0; i<a.size()/2; i++){
+        if(a[i] != a[a.size()-1-i]) capicua = false;
+    }
+
+    if(capicua) cout << "Es capicua";
+    else cout << "No es capicua";
+}
