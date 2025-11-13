@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+string convertir(int n){
+    string nums[] = {
+        "CERO","UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE",
+        "DIEZ","ONCE","DOCE","TRECE","CATORCE","QUINCE","DIECISEIS","DIECISIETE",
+        "DIECIOCHO","DIECINUEVE","VEINTE"
+    };
+    return nums[n];
+}
+
+int main(){
+    int n;
+    cin >> n;
+    cout << convertir(n);
+}
