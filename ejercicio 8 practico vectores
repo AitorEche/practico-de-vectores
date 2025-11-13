@@ -1,0 +1,15 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+    vector<double> A = {1, 4, 9, 2, 10};
+    double mayor = abs(A[1] - A[0]);
+
+    for(int i=1; i < A.size()-1; i++){
+        double dif = abs(A[i+1] - A[i]);
+        if(dif > mayor) mayor = dif;
+    }
+
+    cout << "Mayor diferencia: " << mayor;
+}
